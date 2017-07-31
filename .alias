@@ -8,9 +8,13 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# Vim as default
-alias vi=vim
-alias svi='sudo vi'
-alias vis='vim "+set si"'
-alias edit='vim'
-
+# If vim exists
+type vim &> /dev/null
+if [ $? -eq 0 ]; then
+	# Vim as default
+	alias vi=vim
+	alias edit='vim'
+else
+	# Vi as default
+	alias edit='vi'
+fi
