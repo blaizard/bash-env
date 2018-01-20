@@ -14,7 +14,9 @@ if [ $? -eq 0 ]; then
 	# Vim as default
 	alias vi=vim
 	alias edit='vim'
+	git config --global core.editor "vim"
 else
 	# Vi as default
 	alias edit='vi'
+	git config --global core.editor "vi"
 fi
