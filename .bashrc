@@ -1,4 +1,4 @@
-echo -n "Setting-up bash environement..."
+echo -n "Setting-up bash environment..."
 
 # Import aliases
 test -s ~/.alias && . ~/.alias || true
