@@ -1,14 +1,16 @@
-# ls
+#!/bin/bash
+
+# --- ls ----------------------------------------------------------------------
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias lla='ls -la'
 
-# grep
+# ---- grep -------------------------------------------------------------------
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# If vim exists
+# ---- vim --------------------------------------------------------------------
 type vim &> /dev/null
 if [ $? -eq 0 ]; then
 	# Vim as default
@@ -20,3 +22,7 @@ else
 	alias edit='vi'
 	git config --global core.editor "vi"
 fi
+
+# Reload the configuration if needed
+alias reload='. ~/.bashrc'
+
