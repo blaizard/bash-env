@@ -13,6 +13,13 @@ test -s ~/.bashrc.local && . ~/.bashrc.local || true
 # Only output to interactive shell.
 if echo "$-" | grep i > /dev/null; then
 
+	# Load command line fuzzy finder
+	if [ -f ~/.fzf.bash ]; then
+		source ~/.fzf.bash
+	else
+		echo "Command line fuzzy finder (fzf) is not installed."
+	fi
+
 	# Set the prompt
 	parse_git_branch()
 	{
@@ -36,6 +43,3 @@ if echo "$-" | grep i > /dev/null; then
 
 	echo -e "\tdone"
 fi
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
